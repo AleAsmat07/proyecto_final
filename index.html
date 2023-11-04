@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <script defer src="js/funcionalidades.js"></script>
+</head>
+<body>
+    <!--Header principal de la web, contiene 4 enlaces a modo de menú principal. Los botones abrir y cerrar seran utilizados para abrir o cerrar el header cuando este pase a ser menú hamburguesa según el responsive-->
+    <header>
+        <button class="abrir">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <button class="cerrar">
+                <img src="img/cerrar_cuadro.png" alt="">
+            </button>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre&nbsp;Nosotros</a></li>
+                <li><a href="#">Funciones</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--Primera sección de la página, contiene el nombre de la plataforma a modo de imagen puesto que es el logo-->
+    <section class="uno">
+        <h1><img src="img/Logo.png" alt="Culture Hub"></h1>
+    </section>
+    <!--Segunda sección de la página, contiene dos parrafos informativos sobre la plataforma y un par de imagenes a modo de enlace que llevarian a paginas de descarga-->
+    <section class="dos">
+        <div class="texto">
+            <p>Únete a nuestra comunidad de amantes del arte y la cultura, y déjanos ser tu guía en esta aventura cultural.</p>
+            <p>Descarga nuestra app y prepárate para explorar, disfrutar y sumergirte en el apasionante mundo de las actividades culturales.</p>
+        </div>
+        <div class="imagenes">
+            <a href="#"><img src="img/google_play.png" alt="Google Play"></a>
+            <a href="#"><img src="img/apple_download.png" alt="Apple Store"></a>
+        </div>
+    </section>
+    <!--Sección con estadísticas de la plataforma, contiene parrafos con estos datos-->
+    <section class="numbers">
+        <div>
+            <p>1,000+</p>
+            <p>Actividades culturares al mes</p>
+        </div>
+        <div>
+            <p>200+</p>
+            <p>Comercios aliados</p>
+        </div>
+        <div>
+            <p>15+</p>
+            <p>Diferentes categorías en la app</p>
+        </div>
+    </section>
+    <!--Tercera sección de la página, contiene las funciones de la plataforma y esta dividida en dos divs-->
+    <section class="tres">
+        <h2>Funciones</h2>
+        <div class="texto">
+            <div class="contenedor">
+                <div>
+                    <p>Filtros por categorias, precios, zona, etc.</p>
+                </div>
+                <div>
+                    <p>Facilidad de reservar y/o comprar entrada desde la app</p>
+                </div>
+            </div>
+            <div class="ultimo_contenedor">
+                <div>
+                    <p>Sección de recomendados basado en compras pasadas y gustos propios</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Sección de recomendados de la página, contiene imagenes a modo de contenido puesto que muestras información relevante y estas son enlaces ya que al darles click se abre una ventana modal. Dentro de esta sección también se encuentra el contenedor modal que es el que con la ayuda de JavaScript va a mostrar las especificaciones unicas de cada actividad-->
+    <section class="recomendaciones">
+        <h2>Recomendaciones del Mes</h2>
+        <div class="actividades">
+            <a href="img/Murales_grande.jpg"><img src="img/Murales_chiqui.jpg" alt="img Murales"></a>
+            <a href="img/Mixology_grande.jpg"><img src="img/Mixology_chiqui.jpg" alt="img Mixologia"></a>
+            <a href="img/Tejer_grande.jpg"><img src="img/Tejer_chiqui.jpg" alt="img Tejer"></a>
+        </div>
+        <div class="modal">
+            <div class="cerrado">
+                <img src="img/cerrar_cuadro.png" alt="img de una equis">
+            </div>
+            <div class="flecha izq">
+                <img src="img/flecha_izq.png" alt="img de una flecha iqz">
+            </div>
+            <div class="contenedor_img">
+                <img src="img/Murales_grande.jpg" alt="imgagen principal">
+            </div>
+            <div class="informacion">
+                <h3>¡Recorrido por los mejores murales en Madrid!</h3>
+                <p>Visitaremos más de 20 murales al rededor de la ciudad de Madrid honrando así el arte callejero y los cientos de artistas detrás de él.</p>
+                <h5>Ubicación:  Parque El Retiro</h5>
+                <div class="entradas">
+                    <div class="numero">
+                        <div class="menos">
+                            <img src="img/menos_cuadro.png" alt="img menos">
+                        </div>
+                        <h4>0</h4>
+                        <div class="mas">
+                            <img src="img/mas_cuadro.png" alt="img más">
+                        </div>
+                    </div>
+                    <div class="precio">
+                        <h4>50€</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="flecha der">
+                <img src="img/flecha_der.png" alt="img flecha der">
+            </div>
+        </div>
+    </section>
+    <!--Sección final de contenido de la página, aquí podemos encontrar de un texto e imagenes a modo de enlace que llevarian a paginas de descarga-->
+    <section class="final">
+        <div class="derecha">
+            <div class="texto">
+                <p>¡Descarga nuestra app para encontrar todas las actividades disponibles!</p>
+            </div>
+            <div class="imagenes">
+                <a href=""><img src="img/google_play.png" alt="Google Play"></a>
+                <a href=""><img src="img/apple_download.png" alt="Apple Store"></a>
+            </div>
+        </div>
+    </section>
+    <!--Footer de la web, contiene con dos secciones y diversos menus a modo de enlace puesto que estos llevarian a otras paginas de la web-->
+    <footer>
+        <section class="one">
+            <div>
+                <ul>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Funciones</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="two">
+            <div>
+                <p>© 2023. Culture Hub. Todos los derechos reservados</p>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Términos de Servicio</a></li>
+                    <li><a href="#">Servicios de Cookies</a></li>
+                </ul>
+            </div>
+        </section>
+    </footer>
+</body>
+</html>

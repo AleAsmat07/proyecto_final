@@ -1,0 +1,594 @@
+/* Estilos globales */
+*{
+    margin: 0;
+}
+body{
+    background-color: rgb(249, 250, 250);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Encabezado y navegación */
+header{
+    height: 9.4rem;
+}
+ul{
+    list-style: none;
+    display: flex; /* hace que la lista este horizontal y no vertical */
+    align-items: center;
+}
+nav ul{
+    border-top: 1.5px solid rgba(46, 45, 45, 1);
+    border-bottom: 1.5px solid rgba(46, 45, 45, 1);
+}
+li{
+    font-size: 1.2em;
+    flex-grow: 1; /* hace que el espacio se divida de manera proporcional y me deja el menu extendido al ancho de la pagina */
+    font-weight: 600;
+}
+nav li{
+    padding: 34px 0px;
+}
+a{
+    display: block; /* me deja tratar el link como texto y poder alinearlo al centro */
+    text-align: center;
+}
+nav a{
+    text-decoration: none;
+    color: rgba(46, 45, 45, 1);
+    transition: padding 0s, background-color 0s
+}
+nav a:hover{
+    background-color: rgba(128, 205, 225, 1);
+    padding:10px 0px; /* para que el hover se vea más alto que la palabra */
+    border-radius: 10px;
+    width: 50%; /* para que el ancho del hover sea solo un poco más que el de la palabra y no el de todo el tamaño del li */
+    margin: auto;
+}
+.abrir,.cerrar{
+    display: none;
+    -webkit-appearance:none; /* correcta visualizacion en todos los navegadores */
+    appearance:none;/* eliminar el estilo por defecto del botón */
+    background-color: transparent;
+}
+
+/* Secciones */
+section{
+    display: flex; /* para que los elementos dentro de las secciones se coloquen uno al lado del otro */
+}
+.uno{
+    width: 90%; /* para que las imagenes de fondo dejen un poco de margen a cada lado */
+    height: 100vh; /* para que tenga todo el alto de la pantalla */
+    margin: auto; /* para que toda la seccion este centrada */
+    justify-content: center;
+    background-image: url(../img/absurd\ 1.png),url(../img/absurd\ 2.png);
+    background-repeat: no-repeat;
+    background-position: left bottom, right bottom;
+}
+.dos{
+    background-color: rgba(46, 45, 45, 1);
+    margin: 10px 0px;
+}
+.dos div{
+    margin: 60px; /* para que cada div pueda tener su espacio y se noten separados */
+    width: calc(100% / 2);
+}
+.dos .imagenes{
+    display: flex; 
+    justify-content: space-around;
+    flex-wrap: wrap; /* para poder poner ambas imagenes separadas de manera vertical */
+    align-content: space-around;
+}
+.dos .texto{
+    color: rgb(249, 250, 250);
+    font-size: 1.5em;
+    font-weight: 500;
+    text-align: justify;
+}
+.dos .texto p:first-child{
+    margin-bottom: 40px; /* para que haya un espacio entre el primer y segundo párrafo */
+}
+.numbers{
+    margin: 60px auto;
+    justify-content: center; /* para que este centrado cuand ose haga responsive */
+}
+.numbers div{
+    text-align: center;
+    font-size: 2.6em;
+    font-weight: 600;
+    width: calc(100% / 3); /* para que los 3 divs tengan el mismo tamaño */
+    margin-left: 20px;
+}
+.numbers div p:last-child{
+    padding: 20px 12px 20px 0px; /* para que el texto este separado de los números y cree un poco más de separación entre los divs */
+}
+.numbers div p:first-child{
+    color: rgba(128, 167, 225, 1);
+}
+.tres{
+    margin: 26px auto;
+    width: 90%; /* para que la seccion este centrada y deje un poco de margen a cada lado */
+    height: 100vh; /* para que tenga todo el alto de la pantalla */
+    background-image: url(../img/absurd\ 3.png); /* imagen decorativa */
+    background-repeat: no-repeat;
+    background-position: right;
+    flex-direction: column; /* para que el div con texto este debajo del h2 */
+}
+.tres h2{
+    font-size: 2.3em;
+    font-weight: 600;
+}
+.tres .texto{
+    margin: 50px 10px 0px 0px;
+    width: 60%; /* para que el div mida menos del 100% del espacio padre y se pueda ver la imagen de fondo que le puse al contenedor padre */
+}
+.contenedor,
+.ultimo_contenedor{
+    display: flex; /* para que los divs esten uno al laod del otro */
+    height: 40vh; /* para que haya una altura minima y el div este separado de la imagen de fondo */
+}
+.ultimo_contenedor{
+    padding: 0px 61px;
+}
+.contenedor p,
+.ultimo_contenedor p{
+    font-size: 1.3em;
+    text-align: center;
+}
+.contenedor div,
+.ultimo_contenedor div{
+    display: flex;
+    background-image: url(../img/Estrellas.png); /* estrellas decorativas de cada funcion */
+    background-repeat: no-repeat;
+    background-position: top center;
+    align-items: center;
+}
+.contenedor div{
+    width: calc(100% / 2);
+    margin: 0px 20px;
+}
+.recomendaciones{
+    background-color: rgba(46, 45, 45, 1);
+    height: 100vh; /* para que la seccion sea del tamaño de la pagina */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* para que el div este abajo del h2 */
+}
+.recomendaciones h2{
+    font-size: 3.3em;
+    color: rgb(249, 250, 250);
+    font-weight: 600;
+}
+.actividades{
+    width: 90vw; /* permite que las imagenes puedan verse de un buen tamaño */
+    display: grid; /* para poder poner las imagenes como en una tabla */
+    grid-template-columns: repeat(3,auto); /* crea 3 columnas para las imagenes */
+    gap: 30px;
+}
+.actividades img{
+    width: 100%;
+}
+
+/* Modal */
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(128, 167, 225, 1);
+    display: none;
+}
+.visible{
+    display: flex;
+    align-items: center;
+}
+.modal div{
+    position: absolute; /* me da la posibilidad de posicionar los div dentro del modal donde los necesite */
+}
+.cerrado{
+    top: 2vw;
+    right: 4vw;
+    cursor: pointer; /* para indicar que es clicable */
+}
+.flecha{
+    cursor: pointer;
+}
+.izq{
+    left: 1vw;
+}
+.der{
+    right: 1vw;
+}
+.contenedor_img{
+    display: flex;
+    justify-content: center;
+    margin-left: 60px;
+    width: calc( (100% / 2) - 60px); /* la imagen se mantiene en su lado de la pantalla y hace que sea posible el responsive */
+}
+.contenedor_img img{
+    width: 90%;
+}
+.informacion{
+    width: calc( (100% / 2) - 140px); /* para que el div tenga el tamaño apropiado */
+    right: 10vw;
+}
+.informacion h3{
+    margin-bottom: 40px;
+    font-size: 2.2em;
+    text-align: center;
+    font-weight: 500;
+    color: rgba(46, 45, 45, 1);
+}
+.informacion p,
+.informacion h5{
+    font-size: 1.3em;
+    text-align: justify;
+    font-weight: 400;
+    margin-bottom: 40px;
+    color: rgba(46, 45, 45, 1);
+}
+.informacion div{
+    position: relative; /* para que se mantenga en su posición original */
+}
+.entradas{
+    display: flex; /* para que los divs interiores se muestren uno al lado del otro */
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.numero{
+    display: flex; /* para que los elementos interiores se muestren uno al lado del otro */
+    align-items: center;
+    justify-content: space-between;
+    width: 15.5vw;
+}
+.mas, 
+.menos{
+    cursor: pointer;
+}
+h4{
+    font-size: 2.4em;
+    color: rgba(46, 45, 45, 1);
+}
+.precio h4{
+    color: rgb(249, 250, 250);
+}
+
+/* Seccion Final */
+.final{
+    justify-content: flex-end; /* para que el div este a la derecha */
+    background-image: url(../img/absurd\ 1_final.png); /* imagen decorativa de fondo a la derecha */
+    background-repeat: no-repeat;
+    background-position: left center;
+    margin: 40px 20px 40px;
+}
+.derecha{
+    display: flex; /* para que el div se acomode bien en el responsive  */
+    width: calc(100% / 2); /* para que el div solo ocupe la mitad derecha de la sección */
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.derecha .imagenes{
+    display: flex; /* para que las imagenes puedan tener un espacio entre si */
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 215px;
+    margin-top: 30px;
+}
+.derecha .texto{
+    color: rgba(46, 45, 45, 1);
+    font-size: 3em;
+    font-weight: 600;
+    text-align: justify;
+    margin: 0px 10px 0px 30px;
+}
+
+/* Pie de página */
+footer{
+    background-color: rgba(46, 45, 45, 1);
+    display: flex;
+    flex-wrap: wrap;
+}
+footer section{
+    width: 90%;
+}
+.one{
+    background-image: url(../img/Estrellas_2.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    margin: 32px auto;
+    justify-content: flex-end;
+}
+.one div{
+    width: 90%; /* para que la lista menu quedara un poco más a la derecha */
+}
+.one a{
+    color: rgb(249, 250, 250);
+}
+.one li{
+    padding: 40px 0px;
+}
+.two{
+    margin: 10px auto 0px;
+    border-top: 2px solid rgb(249, 250, 250);
+}
+.two li{
+    font-size: 1em;
+    padding: 34px 0px;
+    font-weight: 400;
+    font-style: italic;
+}
+.two a{
+    text-decoration: none;
+    color: rgb(249, 250, 250);
+}
+.two div:last-child{
+    width: 60%;
+}
+.two div:first-child{
+    display: flex; /* para mantener centrado el texto en el segundo div de la sección*/
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    margin-left: 20px;
+}
+.two p{
+    color: rgb(249, 250, 250);
+    font-size: 1em;
+    font-weight: 400;
+}
+
+@media screen and (max-width:801px){
+    nav{ /* define el menu desplegable este escondido y que sea de tamaño completo */
+        position: fixed;
+        top: -100vh;
+        left: 0;
+        padding: 20px;
+        width: calc(100% - 40px);
+        height: calc(100vh - 40px);
+        background-color: rgba(128, 205, 225, 1);
+        transition: top 0.9s;
+    }
+    .desplegado{
+        top:0;
+    }
+    nav ul{
+        display: block;
+    }
+    nav li{
+        font-size: 2.8em;
+    }
+    nav li:not(:last-child){
+        margin-right: 0;
+    }
+    nav li:not(:first-child){
+        margin-top: 20px;
+    }
+    nav a{
+        color: rgba(46, 45, 45, 1);
+    }
+    .abrir{ /* esto crea el menu hamburguesa y lo pone al centro de la página */
+        display: block;
+        border: 2px solid rgba(46, 45, 45, 1);
+        border-radius: 5px;
+        width: 50px;
+        height: 50px;
+        padding: 5px 5px 0;
+        position: relative;
+        left: calc(92% / 2);
+        top: 50px;
+    }
+    .abrir span{ /* estilo de las rallitas del menu hamburguesa */
+        display: block;
+        height: 4px;
+        background-color: rgba(46, 45, 45, 1);
+        margin-bottom: 7px;
+    }
+    .cerrar{
+        display: block;
+        border: none;
+        font-size: 1.5em;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    header{
+        border-bottom: 1.5px solid rgba(46, 45, 45, 1);
+    }
+    .uno{
+        height: 80vh;
+        background-size: 45%; /* redimensión de las imagenes de fondo para que se vean mejor */
+    }
+    h1{
+        display: flex; /* permite acomodar de la mejor manera el logo centrado en la parte superior */
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .uno img{
+        width: 89%; /* redimensión del logo para que se vea mejor */
+        margin-top: 15px;
+    }
+    .dos{
+        flex-wrap: wrap; /* para que el div de imagen se ponga abajo del div texto */
+    }
+    .dos .texto{
+        width: auto; /* para que el texto tenga el ancho de necesario */
+    }
+    .dos .imagenes{
+        width: 100vw;
+    }
+    .numbers{
+        flex-wrap: wrap; /* para que el tercer div pueda estar abajo de los dos primeros */
+    }
+    .numbers div{
+        font-size: 2em;
+    }
+    .tres{
+        height: 120vh; /* para que la seccion este mas alta y se pueda ver la imagen de fondo solita */
+        background-position: center bottom;
+        background-size: 50%; /* redimensión de la imagen para que se vea mejor */
+    }
+    .tres .texto{
+        width: auto; /* para que el div pueda ocupar todo el ancho de la seccion */  
+        margin: 50px 10px 0px 10px;
+    }
+    .recomendaciones h2{
+        font-size: 2.5em;
+        text-align: center;
+    }
+    .actividades{
+        grid-template-columns: repeat(2,auto); /* crea 2 columnas para las imagenes */
+    }
+    .cerrado{
+        right: 1vw;
+    }
+    .cerrado img{
+        width: 80%; /* para que el tamaño de la imagen este proporcional al responsive */
+    }
+    .flecha{
+        top: 46vh; /* para que las flechas esten más centradas */
+    }
+    .contenedor_img{
+        top: 10vh;
+        width: 50%; /* para que el contenedor de la imagen tenga un buen tamaño */
+        right: 23vw;
+    }
+    .informacion{
+        right: 17vw; /* para que el div este centrado */
+        width: 65%; /* para que el div tenga el ancho adecuado */
+        top: 54vh;
+    }
+    .informacion h3{
+        font-size: 1.6em;
+        margin-bottom: 30px;
+    }
+    .informacion p,
+    .informacion h5{
+        font-size: 1.1em;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .numero{
+        width: 26.5vw;
+    }
+    .menos img,
+    .mas img{
+        width: 90%; /* para que las imagenes tengan un tamaño adecuado */
+    }
+    h4{
+        font-size: 2em;
+    }
+    .final{
+        background-position: center top;
+        height: 100vh; /* para que la seccion tuviera el alto suficiente para que la imagen de fondo y el texto se vieran bien */
+        background-size: 50%; /* redimension para que la imagen se vea mejor */
+    }
+    .derecha{
+        width: auto; /* para que el texto tenga el ancho de la pagina */
+    }
+    .derecha .imagenes{
+        align-content: center;
+    }
+    .derecha .texto {
+        font-size: 2.4em;
+        margin: 0px 30px 0px 30px;
+    }
+    .one div{
+        margin: auto; /* para que el div este centrado */
+    }
+    .one ul,
+    .two ul{
+        flex-direction: column; /* para que los li esten uno abajo del otro */
+    }
+    .two {
+        align-items: center;
+        flex-direction: column-reverse; /* para que el párrafo este abajo del ul */
+    }
+    .two div:first-child{
+        width: auto; /* para que el div del párrafo tenga todo el ancho de la pagina */
+    }
+}
+
+@media screen and (max-width:501px){
+    .uno{
+        background-position: center center, center bottom; /* para que las imagenes de fondo se vean una abajo de la otra */
+    }
+    .dos .texto{
+        font-size: 1.2em;
+    }
+    .dos .imagenes{
+        height: 25vh; /* para que las imagenes puedan estar separadas */
+    }
+    .dos .imagenes img{
+        width: 80%; /* redimension para que las imagenes se vean mejor */
+    }
+    .numbers{
+        flex-direction: column; /* para que los divs esten uno abajo del otro */
+        align-content: center;
+    }
+    .numbers div{
+        width: 25vh; /* para que los divs tengan un mejor tamaño */
+        font-size: 1.8em;
+        margin: 0px; /* para que los divs este centrados */
+    }
+    .numbers div p:last-child {
+        padding: 12px 0px 42px 0px;
+    }
+    .tres{
+        background-size: 55%; /* para que la imagen de fondo se aprecie mejor */
+    }
+    .tres h2 {
+        font-size: 2em;
+    }
+    .contenedor p, .ultimo_contenedor p {
+        font-size: 1.25em;
+    }
+    .recomendaciones h2{
+        font-size: 1.9em;
+        margin-top: 20px;
+    }
+    .actividades{
+        grid-template-columns: repeat(1,50%); /* para que las imagenes esten en una columna y al 50% para que puedan entrar bien en la seccion */
+        justify-content: center;
+    }
+    .cerrado{
+        top: 6vw;
+    }
+    .cerrado img{
+        width: 70%;
+    }
+    .flecha img{
+        width: 80%;
+    }
+    .contenedor_img{ /* para ubicar a la imagen en el centro */
+        top: 13vh;
+        right: 27vw;
+        justify-content: normal;
+    }
+    .contenedor_img img{
+        width: 110%;
+    }
+    .informacion{
+        top: 43vh; /* para ubicar a a este div abajo de la imagen */
+    }
+    .final{
+        background-size: 55%;
+    }
+    .derecha .texto{
+        font-size: 2em;
+    }
+    .derecha .imagenes{
+        align-content: space-around; /* para que las imagenes esten separadas */
+    }
+    .derecha .imagenes img{
+        width: 80%; /* redimension para que las imagenes se vean mejor */
+    }
+    .two div:first-child{
+        margin: 0px;
+        text-align: center;
+    }
+    .two ul {
+        padding-inline-start: 0px; /* para que este centrado el ul */
+    }
+}
